@@ -1,0 +1,64 @@
+/**
+ * Источник https://www.youtube.com/watch?v=QstdVe6cSbo&list=PLm2nrlGYLq1Uv1qYpqMC07JYoOXilEQZI&index=10&t=2594s&ab_channel=IvanPonomarev
+ */
+
+/**
+ * До лямбд
+ */
+
+
+public interface ActionListener {
+    void actionPerformed(ActionEvent event);
+}
+
+/**
+ * Вместо того, чтоб создавать класс для реализации метода интерфейса,
+ * мы можем создавать анонимные классы.
+ */
+
+class Test {
+    public void sort() {
+        String[] friends = {"Peter", "Paul", "Mary"};
+
+        Arrays.sort(friends,
+                new Comparator<String>() {
+                    @Override
+                    public int compare(String s1, String s2) {
+                        return s1.length() - s2.length();
+                    }
+                });
+    }
+}
+
+/**
+ * Решение - лямбда выражение.
+ * Лямбда - некое действие, которое может принимать в себя аргументы и вернуть результат.
+ */
+
+class Test {
+    public void sort() {
+        String[] friends = {"Peter", "Paul", "Mary"};
+
+        Arrays.sort(friends,
+                (String s1, String s2) -> s1.length() - s2.length())
+    }
+}
+
+
+/**
+ * Если выражение лямбды сводится к вызову метода,
+ * можно использовать метов референс ( ссылка на метод ).
+ */
+
+class Test {
+    public void sort() {
+        String[] friends = {"Peter", "Paul", "Mary"};
+
+        Arrays.sort(friends,
+                (s1, s2) -> s1.compareToIgnorecase(s2.length()))// лямбда
+
+        Arrays.sort(friends, String::compareToIgnorecase)// метод референс
+    }
+}
+
+
