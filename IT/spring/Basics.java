@@ -9,6 +9,10 @@
 
 
 /**
+ *
+ * Constructor -> Configuration(configurer) -> Initialization(postconstruct) -> Wrapping(proxy) -> PreDestroy
+ *
+ *
  * Способы конфигурации Spring:
  *      - Annotation-based (наиболее употребляемая)
  *      - XML-based
@@ -104,6 +108,72 @@ public class AppConfig {
  *                          Bar b = new getBar();
  *                      }
  *                }
+ */
+
+/**
+ *  Interface Bar
  *
+ *  Implementation Bar1
+ *  Implementation Bar2
+ *  Implementation Bar3
  *
+ * Если есть несколько бинов которые могут быть заинжекчены
+ *   - спринг может подставить бин по имени переменной
+ *
+ *          Не работает
+ *          @Autowired
+ *          private Bar bar
+ *
+ *          Работает
+ *          @Autowired
+ *          private Bar bar1
+ *
+ *    - @Qualifier
+ *
+ *          @Autowired
+ *          @Qualifier("bar1")
+ *          private Bar bar();
+ *
+ *    - @Primary
+ *
+ *          ставится над классом и указывает какую имплементацию нужно инжектить если их несколько.
+ *          Можно ставить только на одну имплементацию.
+ *
+ *     - инжектить все бины в список - лучшая практика
+ *
+ *          @Autowired
+ *          private List<Bar> bar;
+ *
+ *          @Autowired
+ *          private Map<String, Bar> bar;
+ */
+
+
+/**
+ * Можно инжектить конфигурационные настройки
+ *
+ *          @PropertySource("classpath:config.properties")
+ *          public class Cinfig{}
+ *
+ *          public class Foo{
+ *          @Value("${url}")
+ *          String url;
+ *          }
+ */
+
+/**
+ * Инициализация
+ *
+ *      - @PostConstruct - java аннотация, может быть установлена над методом инициализации.
+ *      - если невозможно использовать @PostConstructor тогда использовать @Bean(initMethod = "init")
+ */
+
+/**
+ * Финализация
+ *
+ * Симетрична инициализации
+ * Если программа завершается, то спринг контейнер вызывает PreDestroy методы у бинов
+ *
+ *      - @PreDestroy - java аннотация, может быть установлена над методом.
+ *      - если невозможно использовать @PreDestroy тогда использовать @Bean(destroyMethod = "destroy")
  */
