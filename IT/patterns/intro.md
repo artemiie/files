@@ -1,16 +1,16 @@
-Паттерны проектирования это набор решений для типовых проблем.
+Паттерны проектирования это набор решений для типовых проблем. < br/>
 
-Типы паттернов:
+Типы паттернов: < br/>
 
-  Порождающие (Creation) - создание объектов
-    - Singleton
-    - Factory Method
-    - Abstract Factory
-  Страктурные (Structural) - изменение и доработка поведения существующих интерфейсов
-    - Decorator/Wrapper
-    - Adapter
-    - Facade
-  Поведенческий (Behavioral) - взаимодействие между объектами, уменьшение связей
-    - Observer
-    - Strategy
-    - State
+  Порождающие (Creation) - создание объектов < br/>
+    - Singleton < br/>
+    - Factory Method < br/>
+    - Abstract Factory < br/>
+  Страктурные (Structural) - изменение и доработка поведения существующих интерфейсов < br/>
+    - Decorator/Wrapper < br/>
+    - Adapter < br/>
+    - Facade < br/>
+  Поведенческий (Behavioral) - взаимодействие между объектами, уменьшение связей < br/>
+    - Observer < br/>
+    - Strategy < br/>
+    - State < br/>
