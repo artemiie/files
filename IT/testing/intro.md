@@ -76,4 +76,3 @@ Acceptance тестов должно быть еще меньше чем integra
 - JUnit Platform
 - JUnit Jupiter
 - JUnit Vintage
-
