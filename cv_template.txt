@@ -1,0 +1,71 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\nopagenumbers{}
+\usepackage[utf8]{inputenc}
+\usepackage{ragged2e}
+\usepackage[scale=0.915]{geometry}
+\usepackage{import}
+\usepackage{multicol}
+\usepackage{import}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\name{John}{Doe}
+\newcommand*{\customcventry}[7][.13em]{
+\begin{tabular}{@{}l}
+{\bfseries #4} \
+{\itshape #3}
+\end{tabular}
+\hfill
+\begin{tabular}{l@{}}
+{\bfseries #5} \
+{\itshape #2}
+\end{tabular}
+\ifx&#7&%
+\else{\
+\begin{minipage}{\maincolumnwidth}%
+\small#7%
+\end{minipage}}\fi%
+\par\addvspace{#1}}
+\begin{document}
+\makecvtitle
+\vspace*{-16mm}
+\begin{center}\textbf{Java Software Engineer}\end{center}
+\begin{center}
+\begin{tabular}{ c c c }
+\faMobile\enspace +9999999999 & \enspace\enspace\enspace name.surname@gmail.com & \enspace\enspace\enspace\faHome\enspace xxxxxxxxxxx \\
+\end{tabular}
+\end{center}
+
+\section{Profile}
+{I'm a Java Software Engineer with 3 years of experience. I am experienced with microservices and RESTful architecture.
+I'm excited about the continuous learning journey in software development, and i believe that the best solutions come from a combination of expertise, curiosity and patience.}
+
+\section{Skills}
+{\begin{itemize}[label=\textbullet]
+\item {\textbf{Programming Languages:} Java}
+\item {\textbf{Backend:} Spring (MVC, Boot, Data, Security), Quarkus, Hibernate, MyBatis, Kafka, Liquibase, Swagger}
+\item {\textbf{Database:} OracleDB, PostgreSQL, MySQL}
+\item {\textbf{Infrasctructure:} Docker}
+\item {\textbf{Infrasctructure:} JUnit, Mockito, Testcontainers}
+\item {\textbf{Misc:} Git, Maven, }
+\end{itemize}}
+
+\section{Professional Experience}
+\customcventry{03/2021 ‐ present}{{\color{blue}\href{https://google.com/}{(Cedacri International)}}}{Java Software Engineer}{Chișinău, Moldova}{}{
+{\begin{itemize}[leftmargin=0.6cm, label={\textbullet}]
+\end{itemize}}}
+
+\section{Education}
+\customcventry{2019-2022}{\color{blue}\href{https://usm.md/?lang=ru}{Moldova State University}}{Computer Science}{Chișinău, Moldova}{}{}
+
+\section{Languages}
+\begin{multicols}{2}
+    \begin{itemize}[label=\textbullet]
+    \item \textbf{English} [Intermediate]
+    \item {\textbf{Romanina} [Native]}
+    \item {\textbf{Russian} [Native]}
+    \end{itemize}
+\end{multicols}
+\end{document}
